@@ -11,12 +11,13 @@
 <body>
     <h1>Edit Profile</h1>
     <hr>
-    <form action="#" method="post">
+    <form action="#" method="post" enctype="multipart/form-data">
 
         <div class="profile-pic-div">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMCnKVdb6r65QZHqRYFJ8Bo_LK2_RmQH1quU0kEoKJEqxkHgJP53wS6tFUqAZD-0CY2GU&usqp=CAU" id="photo">
-            <input type="file" id="file">
-            <label for="file" id="uploadBtn">Choose Photo</label>
+            <label for="file" id="uploadBtn">Profile Picture: </label>
+            <input type="file" id="file" name="file">
+            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMCnKVdb6r65QZHqRYFJ8Bo_LK2_RmQH1quU0kEoKJEqxkHgJP53wS6tFUqAZD-0CY2GU&usqp=CAU" id="photo"> -->
+            </input>
         </div>
 
         <div class="container">
@@ -48,40 +49,56 @@
         $edu = mysqli_real_escape_string($con, $_POST['edu']);
         $aop = mysqli_real_escape_string($con, $_POST['aop']);
         $mrn = mysqli_real_escape_string($con, $_POST['mrn']);
+        $files = $_FILES['file'];
+
+        //Image Name
+        $fileName = $files['name'];
+        //Image Error
+        $fileErr = $files['error'];
+        //Image Store Temp
+        $fileTmp = $files['tmp_name'];
+
+        //File extension
+        $filesExt = explode('.', $fileName);
+        //confirm to convert extension in lowercase
+        $extCheck = strtolower(end($filesExt));
+        //store extension
+        $fileArr = array('png', 'jpg', 'jpeg');
 
 
         //VALIDATION
-        if ($name == "" && $fh_name == "" && $dob == "" && $phone == "" && $edu == "" && $aop == "" && $mrn == "") {
+        if ($name == "" && $fh_name == "" && $phone == "" && $edu == "" && $aop == "" && $mrn == "" && $files == "") {
             echo "<script>alert('Fields Can not be empty')</script>";
         } elseif (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
 
             echo "<script>alert('Only letters and white space allowed in Name fields')</script>";
-
         } elseif (!preg_match("/^[a-zA-Z-' ]*$/", $fh_name)) {
 
             echo "<script>alert('Only letters and white space allowed in Name fields')</script>";
-
         } elseif (strlen($phone) != 10) {
 
             echo "<script>alert('Mobile Number must be 10 digits')</script>";
+        } elseif (!in_array($extCheck, $fileArr)) {
 
+            echo "<script>alert('Must be a file with .png, .jpg or .jpeg extension')</script>";
         } else {
+
+            //DP upload
+            $storeFile = 'upload/' . $fileName;
+            move_uploaded_file($fileTmp, $storeFile);
 
             // first check the database to make sure
             // a user does not already exist with the same username and/or email
-            $user_check_query = "UPDATE details SET naam='$name',fh_naam='$fh_name',dob='$dob',phn='$phone',edu='$edu',aop='$aop',med_regno='$mrn' WHERE email='$email'  ";
+            $user_check_query = "UPDATE details SET naam='$name',fh_naam='$fh_name',dob='$dob',phn='$phone',edu='$edu',aop='$aop',med_regno='$mrn', dp='$storeFile' WHERE email='$email'  ";
             $result = mysqli_query($con, $user_check_query);
-    
+
             if ($result) {
                 # code...
                 header('location: dashbord.php');
             }
-            
+
             echo "<script>alert('Can not update')</script>";
-
         }
-
-
     }
 
 
