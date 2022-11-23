@@ -28,7 +28,7 @@ $_SESSION['image'] = $row1['dp'];
 
                         <div class="user">
                             <div class="avatar col-md-4">
-                                <img src="./<? echo $_SESSION['image'] ?>" height="50px" width="50px" alt="Profile">
+                                <img src="<?php echo $_SESSION['image'] ?>" id="photo" alt="Profile">
                             </div>
 
                             <div class="user-name col-md-8">
