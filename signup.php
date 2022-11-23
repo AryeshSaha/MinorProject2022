@@ -84,6 +84,7 @@
                           VALUES('$email','$name' , '$fh_name','$dob','$gender','$mobile')";
                         mysqli_query($con, $query);
                         $_SESSION['name'] = $name;
+                        $_SESSION['email'] = $email;
                         $_SESSION['success'] = "You are now logged in";
                         header('location: dashbord.php');
                     }

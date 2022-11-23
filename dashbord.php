@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+include('dbcon.php');
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -23,10 +27,10 @@
 
                             <div class="user-name col-md-8">
                                 <h5><a href="#">
-                                        <--name-->
+                                        <? echo $_SESSION['name']  ?>
                                     </a></h5>
                                 <span><a href="#">
-                                        <--email-->
+                                        <? echo $_SESSION['email']  ?>
                                     </a></span>
                             </div>
                             <a class="dropdown pull-right" href="#">
@@ -44,7 +48,7 @@
                         <li><a href="#"><i class="fa fa-file-text" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Products</span></a></li>
 
                         <!--<li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Anforderungen</span></a></li>-->
-                        <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Settings</span></a></li>
+                        <li><a href="/profileEdit.php"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Settings</span></a></li>
 
                     </ul>
                 </div>
@@ -54,7 +58,7 @@
             </div>
             <!--  -->
             <div class="user-dashboard">
-                <h1>Hello, <--name-->
+                <h1>Hello, <?php echo $_SESSION['name'] ?>
                 </h1>
                 <div class="row">
                     <div class="col-md-5 col-sm-5 col-xs-12 gutter">
