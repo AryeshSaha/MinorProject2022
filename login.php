@@ -32,7 +32,7 @@ include('dbcon.php'); ?>
                 $num_row     = mysqli_num_rows($query);
 
                 if ($num_row > 0) {
-                    $_SESSION['user_id'] = $row['user_id'];
+                    $_SESSION['email'] = $row['email'];
                     header('location:dashbord.php');
                 } else {
                     echo 'Invalid Username and Password Combination';

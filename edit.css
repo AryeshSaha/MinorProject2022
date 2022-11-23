@@ -58,13 +58,11 @@ h1 {
 }
 
 .container {
-  position: relative;
-  top: 58%;
-  left: 50%;
+  position: absolute;
+  top: 68%;
+  left: 47.5%;
   transform: translate(-50%, -50%);
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
   margin-top: 30px;
 }
 
