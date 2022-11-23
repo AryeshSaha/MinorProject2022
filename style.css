@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Carter+One&family=Handlee&display=swap");
+
+* {
+  text-decoration: none;
+  outline: none;
+}
+html {
+  height: 100%;
+}
+body {
+  background: url("http://orig12.deviantart.net/a72c/f/2014/120/8/c/abstract_geometric_low_poly___wallpaper_by_mcfrolic-d7gjq9d.jpg");
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  opacity: 0.6;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 9%;
+}
+
+header .logo {
+  font-size: 2.3rem;
+  font-weight: bolder;
+  color: #fff;
+}
+
+header .icons a {
+  font-size: 1.7rem;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 1.7rem;
+}
+
+header .icons a:hover {
+  color: violet;
+}
+
+.centerImg {
+  height: 100%;
+  background: url(https://freepngimg.com/thumb/leaf/85028-brain-green-leaf-polygon-human-download-hd-png.png)
+    no-repeat fixed center center;
+  opacity: 1;
+  animation: lowPoly 6.3s ease-in infinite;
+}
+
+@keyframes lowPoly {
+  25% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  height: 800px;
+}
+
+#typewriter {
+  font-size: 50px;
+  color: rgb(2, 1, 51);
+  font-family: "Carter One", sans-serif;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-490%);
+}
+
+p {
+  font-size: 25px;
+  color: white;
+  font-family: "Handlee";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+footer {
+  position: absolute;
+  background: black;
+  color: white;
+  padding: 9px 20px;
+  opacity: 0.6;
+  z-index: 1000;
+  bottom: 0;
+  width: 100%;
+}
+.center {
+  text-align: center;
+}
