@@ -3,12 +3,6 @@
 <?php
 session_start();
 include('../../dbcon.php');
-$email = $_SESSION['email'];
-$query1   = mysqli_query($con, "SELECT * FROM details WHERE  email='$email'");
-
-$row1 = mysqli_fetch_array($query1);
-$_SESSION['image'] = $row1['dp'];
-
 ?>
 
 <head>

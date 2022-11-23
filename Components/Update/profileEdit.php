@@ -35,6 +35,8 @@
 
     <?php
     include('../../dbcon.php');
+    include('../../util/saveUser.php');
+
     session_start();
     $email = $_SESSION['email'];
     echo $email;
@@ -91,8 +93,13 @@
             // a user does not already exist with the same username and/or email
             $user_check_query = "UPDATE details SET naam='$name',fh_naam='$fh_name',dob='$dob',phn='$phone',edu='$edu',aop='$aop',med_regno='$mrn', dp='$storeFile' WHERE email='$email'  ";
             $result = mysqli_query($con, $user_check_query);
-
+            // $_SESSION['name'] = $name;
+            // $_SESSION['image'] = $storeFile;
+            setName($name);
+            setImage($storeFile);
             if ($result) {
+
+
                 # code...
                 header('location: ../Dashboard/dashbord.php');
             }
