@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    background-color: cadetblue;
+    display: inline-flex;
+    margin-top: 25px;
+    margin-left: 75px;
+}

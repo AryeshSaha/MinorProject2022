@@ -28,14 +28,17 @@ include('dbcon.php'); ?>
                 $password = mysqli_real_escape_string($con, $_POST['pass']);
 
                 $query         = mysqli_query($con, "SELECT * FROM login WHERE  pass='$password' and email='$email'");
+                $query1         = mysqli_query($con, "SELECT * FROM details WHERE  email='$email'");
                 $row        = mysqli_fetch_array($query);
+                $row1        = mysqli_fetch_array($query1);
                 $num_row     = mysqli_num_rows($query);
 
                 if ($num_row > 0) {
                     $_SESSION['email'] = $row['email'];
+                    $_SESSION['name'] = $row1['naam'];
                     header('location:dashbord.php');
                 } else {
-                    echo "<script>alert('Invalid Username and Password Combination')</script>";
+                    echo 'Invalid Username and Password Combination';
                 }
             }
             ?>
