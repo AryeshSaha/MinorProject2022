@@ -3,6 +3,12 @@
 <?php
 session_start();
 include('dbcon.php');
+$email = $_SESSION['email'];
+$query1   = mysqli_query($con, "SELECT * FROM details WHERE  email='$email'");
+
+$row1 = mysqli_fetch_array($query1);
+$_SESSION['image'] = $row1['dp'];
+
 ?>
 
 <head>
@@ -22,7 +28,7 @@ include('dbcon.php');
 
                         <div class="user">
                             <div class="avatar col-md-4">
-                                <img src="https://img.freepik.com/free-icon/user-image-with-black-background_318-34564.jpg?w=2000">
+                                <img src="./<? echo $_SESSION['image'] ?>" height="50px" width="50px" alt="Profile">
                             </div>
 
                             <div class="user-name col-md-8">
@@ -45,10 +51,10 @@ include('dbcon.php');
                     <ul>
                         <li class="active"><a href="#"><i class="fa fa-dashboard" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
 
-                        <li><a href="#"><i class="fa fa-file-text" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Products</span></a></li>
+                        <li><a href="/courses.php"><i class="fa fa-file-text" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Courses</span></a></li>
 
                         <!--<li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Anforderungen</span></a></li>-->
-                        <li><a href="/profileEdit.php"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Settings</span></a></li>
+                        <li><a href="/profileEdit.php"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Edit Profile</span></a></li>
 
                     </ul>
                 </div>
