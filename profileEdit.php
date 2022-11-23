@@ -50,18 +50,38 @@
         $mrn = mysqli_real_escape_string($con, $_POST['mrn']);
 
 
+        //VALIDATION
+        if ($name == "" && $fh_name == "" && $dob == "" && $phone == "" && $edu == "" && $aop == "" && $mrn == "") {
+            echo "<script>alert('Fields Can not be empty')</script>";
+        } elseif (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
 
+            echo "<script>alert('Only letters and white space allowed in Name fields')</script>";
 
-        // first check the database to make sure
-        // a user does not already exist with the same username and/or email
-        $user_check_query = "UPDATE details SET naam='$name',fh_naam='$fh_name',dob='$dob',phn='$phone',edu='$edu',aop='$aop',med_regno='$mrn' WHERE email='$email'  ";
-        $result = mysqli_query($con, $user_check_query);
+        } elseif (!preg_match("/^[a-zA-Z-' ]*$/", $fh_name)) {
 
-        if ($result) {
-            # code...
-            header('location: dashbord.php');
+            echo "<script>alert('Only letters and white space allowed in Name fields')</script>";
+
+        } elseif (strlen($phone) != 10) {
+
+            echo "<script>alert('Mobile Number must be 10 digits')</script>";
+
+        } else {
+
+            // first check the database to make sure
+            // a user does not already exist with the same username and/or email
+            $user_check_query = "UPDATE details SET naam='$name',fh_naam='$fh_name',dob='$dob',phn='$phone',edu='$edu',aop='$aop',med_regno='$mrn' WHERE email='$email'  ";
+            $result = mysqli_query($con, $user_check_query);
+    
+            if ($result) {
+                # code...
+                header('location: dashbord.php');
+            }
+            
+            echo "<script>alert('Can not update')</script>";
+
         }
-        echo "Worng happen";
+
+
     }
 
 
