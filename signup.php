@@ -79,7 +79,7 @@
                         mysqli_query($con, $query);
                         $_SESSION['username'] = $name;
                         $_SESSION['success'] = "You are now logged in";
-                        header('location: home.php');
+                        header('location: index.php');
                     }
                 }
 
