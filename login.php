@@ -35,7 +35,7 @@ include('dbcon.php'); ?>
                     $_SESSION['email'] = $row['email'];
                     header('location:dashbord.php');
                 } else {
-                    echo 'Invalid Username and Password Combination';
+                    echo "<script>alert('Invalid Username and Password Combination')</script>";
                 }
             }
             ?>
