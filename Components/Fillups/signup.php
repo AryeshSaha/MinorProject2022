@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="login_style.css">
+    <link rel="stylesheet" type="text/css" href="./login_style.css">
 </head>
 
 <body>
@@ -45,7 +45,7 @@
 
 
                 <?php
-                include('dbcon.php');
+                include('../../dbcon.php');
                 session_start();
 
                 // REGISTER USER
@@ -116,7 +116,7 @@
                             $_SESSION['name'] = $name;
                             $_SESSION['email'] = $email;
                             $_SESSION['success'] = "You are now logged in";
-                            header('location: profileEdit.php');
+                            header('location: ../Update/profileEdit.php');
                         }
                     }
                 }
@@ -128,7 +128,7 @@
 
             </div>
             <div class="to__signup">
-                <p>Already have account? <a href="login.php"> Login here</a></p>
+                <p>Already have account? <a href="./login.php"> Login here</a></p>
             </div>
 
         </form>

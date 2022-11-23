@@ -2,7 +2,7 @@
 <html lang="en">
 <?php
 session_start();
-include('dbcon.php');
+include('../../dbcon.php');
 $email = $_SESSION['email'];
 $query1   = mysqli_query($con, "SELECT * FROM details WHERE  email='$email'");
 
@@ -15,7 +15,7 @@ $_SESSION['image'] = $row1['dp'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dashbord.css">
+    <link rel="stylesheet" href="./dashbord.css">
     <title>Courses</title>
 </head>
 
@@ -49,12 +49,12 @@ $_SESSION['image'] = $row1['dp'];
                 </div>
                 <div class="navi">
                     <ul>
-                        <li class="active"><a href="#"><i class="fa fa-dashboard" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
+                        <li class="active"><a href="../Dashboard/dashbord.php"><i class="fa fa-dashboard" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
 
-                        <li><a href="/courses.php"><i class="fa fa-file-text" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Courses</span></a></li>
+                        <li><a href="../Courses/courses.php"><i class="fa fa-file-text" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Courses</span></a></li>
 
                         <!--<li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Anforderungen</span></a></li>-->
-                        <li><a href="/profileEdit.php"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Edit Profile</span></a></li>
+                        <li><a href="../Update/profileEdit.php"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Edit Profile</span></a></li>
 
                     </ul>
                 </div>

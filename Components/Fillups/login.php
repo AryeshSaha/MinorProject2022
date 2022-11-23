@@ -1,9 +1,9 @@
 <?php session_start();
-include('dbcon.php'); ?>
+include('../../dbcon.php'); ?>
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="login_style.css">
+    <link rel="stylesheet" type="text/css" href="./login_style.css">
 </head>
 
 <body>
@@ -36,7 +36,7 @@ include('dbcon.php'); ?>
                 if ($num_row > 0) {
                     $_SESSION['email'] = $row['email'];
                     $_SESSION['name'] = $row1['naam'];
-                    header('location:dashbord.php');
+                    header('location:../Dashboard/dashbord.php');
                 } else {
                     echo 'Invalid Username and Password Combination';
                 }
@@ -44,7 +44,7 @@ include('dbcon.php'); ?>
             ?>
 
             <div class="to__signup">
-                <p>Don't have an account?<a href="signup.php"> Signup here</a></p>
+                <p>Don't have an account?<a href="./signup.php"> Signup here</a></p>
             </div>
             <div class="forgot__password">
                 <a href="#">Forgot password?</a>

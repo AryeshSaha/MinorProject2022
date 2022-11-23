@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Photo Like FB DP</title>
-    <link rel="stylesheet" href="/edit.css">
+    <link rel="stylesheet" href="./edit.css">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
     </form>
 
     <?php
-    include('dbcon.php');
+    include('../../dbcon.php');
     session_start();
     $email = $_SESSION['email'];
     echo $email;
@@ -84,7 +84,7 @@
         } else {
 
             //DP upload
-            $storeFile = 'upload/' . $fileName;
+            $storeFile = '../upload/' . $fileName;
             move_uploaded_file($fileTmp, $storeFile);
 
             // first check the database to make sure
@@ -94,7 +94,7 @@
 
             if ($result) {
                 # code...
-                header('location: dashbord.php');
+                header('location: ../Dashboard/dashbord.php');
             }
 
             echo "<script>alert('Can not update')</script>";
@@ -109,7 +109,7 @@
 
 
 
-    <script src=" edit.js"></script>
+    <script src=" ./edit.js"></script>
 
 </body>
 
