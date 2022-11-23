@@ -38,7 +38,7 @@ include('../../dbcon.php'); ?>
                     $_SESSION['name'] = $row1['naam'];
                     header('location:../Dashboard/dashbord.php');
                 } else {
-                    echo 'Invalid Username and Password Combination';
+                    echo "<h5 style = 'color: red'>Invalid Username and Password Combination</h5>";
                 }
             }
             ?>

@@ -57,6 +57,7 @@
                     $mobile = mysqli_real_escape_string($con, $_POST['mobile']);
                     $email = mysqli_real_escape_string($con, $_POST['email']);
                     $password = mysqli_real_escape_string($con, $_POST['pass']);
+                    $dp = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMCnKVdb6r65QZHqRYFJ8Bo_LK2_RmQH1quU0kEoKJEqxkHgJP53wS6tFUqAZD-0CY2GU&usqp=CAU";
 
 
                     //VALIDATION
@@ -110,13 +111,14 @@
                             $mobile = mysqli_real_escape_string($con, $_POST['mobile']);
 
                             // Finally, register user if there are no errors in the for
-                            $query = "INSERT INTO details (email, naam, fh_naam,dob,sex,phn)
-                              VALUES('$email','$name' , '$fh_name','$dob','$gender','$mobile')";
+                            $query = "INSERT INTO details (email, naam, fh_naam, dob, sex, phn, dp)
+                              VALUES('$email','$name' , '$fh_name','$dob','$gender','$mobile', '$dp')";
                             mysqli_query($con, $query);
                             $_SESSION['name'] = $name;
                             $_SESSION['email'] = $email;
                             $_SESSION['success'] = "You are now logged in";
-                            header('location: ../Update/profileEdit.php');
+                            $_SESSION['image'] = $dp;
+                            header('location: ../Dashboard/dashbord.php');
                         }
                     }
                 }

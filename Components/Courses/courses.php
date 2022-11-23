@@ -19,16 +19,18 @@
 
     // $num_row = mysqli_num_rows($query);
     while ($row   = mysqli_fetch_array($query)) {
-        echo '<div class="card" style="width: 18rem">';
-        echo '<div class="card-body">';
-        echo '<h5 class="card-title">' . $row['crnaam'] . '</h5>';
-        echo ' </div>';
-        echo '<ul class="list-group list-group-flush">';
-        echo ' <li class="list-group-item">Price:' . $row['amt'] . '</li>';
-        echo '<li class="list-group-item">Duration: ' . $row['dur'] . ' Minutes</li>';
-        echo '<button type="button" class="btn btn-success">Add</button>';
-        echo ' </ul>';
-        echo '</div>';
+    ?>
+        <div class="card" style="width: 18rem">
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $row['crnaam']; ?></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"> Price: <?php echo $row['amt']; ?></li>
+                <li class="list-group-item">Duration: <?php echo $row['dur']; ?> Minutes</li>
+                <button type="button" class="btn btn-success">Buy</button>
+            </ul>
+        </div>
+    <?php
     }
     ?>
 

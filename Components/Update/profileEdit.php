@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php
+    session_start();
+    // echo $_SESSION['image'];
+    ?>
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +20,7 @@
         <div class="profile-pic-div">
             <label for="file" id="uploadBtn">Profile Picture: </label>
             <input type="file" id="file" name="file">
-            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMCnKVdb6r65QZHqRYFJ8Bo_LK2_RmQH1quU0kEoKJEqxkHgJP53wS6tFUqAZD-0CY2GU&usqp=CAU" id="photo"> -->
+            <img src="<?php echo $_SESSION['image'] ?>" id="photo">
             </input>
         </div>
 
@@ -37,9 +41,9 @@
     include('../../dbcon.php');
     include('../../util/saveUser.php');
 
-    session_start();
+    // session_start();
     $email = $_SESSION['email'];
-    echo $email;
+    // echo $email;
 
     // REGISTER USER
     if (isset($_POST['edit'])) {
