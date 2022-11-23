@@ -118,8 +118,8 @@ $_SESSION['image'] = $row1['dp'];
             <div class="modal-content">
 
                 <div class="modal-footer">
-                    <button type="button" class="cancel" data-dismiss="modal">Close</button>
-                    <button type="button" class="add-project" data-dismiss="modal">Save</button>
+                    <button type="button" class="cancel" data-dismiss="modal"><a href="../../util/Logout.php">Logout</a></button>
+                    <!-- <button type="button" class="add-project" data-dismiss="modal">Save</button> -->
                 </div>
             </div>
 

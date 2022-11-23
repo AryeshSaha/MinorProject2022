@@ -655,6 +655,10 @@ header {
   padding: 10px 30px;
   position: relative;
 }
+.cancel a {
+  text-decoration: none;
+  color: white;
+}
 
 .modal {
   top: 20%;
