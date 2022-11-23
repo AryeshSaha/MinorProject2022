@@ -86,7 +86,7 @@
                         $_SESSION['name'] = $name;
                         $_SESSION['email'] = $email;
                         $_SESSION['success'] = "You are now logged in";
-                        header('location: dashbord.php');
+                        header('location: profileEdit.php');
                     }
                 }
 
