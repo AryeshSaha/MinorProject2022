@@ -15,32 +15,12 @@ include('dbcon.php'); ?>
             </div>
             <div class="sep"></div>
             <div class="inputs">
-                <input id="name" name="name" type="text" placeholder="name" autofocus />
-                <small id="usererror"></small>
+                <input type="email" name="email" placeholder="e-mail" autofocus />
+                <input type="password" name="pass" placeholder="Password" />
 
-                <input id="father" name="father" type="text" placeholder="father/husband name" />
-                <small id="fherror"></small>
-
-                <input id="dob" name="dob" type="date" />
-                <small id="doberror"></small>
-
-                <select name="gender">
-                    <option value="none" selected>Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">other</option>
-                </select>
-
-                <input id="mobile" name="mobile" type="number" placeholder="mobile" />
-                <small id="mobileerror"></small>
-
-                <input id="email" name="email" type="email" placeholder="e-mail" />
-                <small id="emailerror"></small>
-
-                <input id="password" name="password" type="password" placeholder="Password" />
-                <small id="passworderror"></small>
-
-                <a id="submit" onclick="validate()" href="#">SIGN UP NOW</a>
+                <div class="button-panel">
+                    <input type="submit" class="button" title="Log In" name="login" value="Login"></input>
+                </div>
             </div>
             <?php
             if (isset($_POST['login'])) {
