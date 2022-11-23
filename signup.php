@@ -23,7 +23,7 @@
 
                 <input type="text" placeholder="name" name="name" />
 
-                <input type="text" placeholder="father/husband name" name="f/h_name" />
+                <input type="text" placeholder="father/husband name" name="fh_name" />
 
                 <input id="dob" name="dob" type="date" />
 
@@ -67,19 +67,25 @@
                         echo "Email already exist";
                     } else {
 
+
+
+                        $query1 = "INSERT INTO login (email, pass)
+                          VALUES('$email', '$password')";
+                        mysqli_query($con, $query1);
+
                         $name = mysqli_real_escape_string($con, $_POST['name']);
                         $dob = mysqli_real_escape_string($con, $_POST['dob']);
                         $gender = mysqli_real_escape_string($con, $_POST['gender']);
-                        $fh_name = mysqli_real_escape_string($con, $_POST['f/h_name']);
+                        $fh_name = mysqli_real_escape_string($con, $_POST['fh_name']);
                         $mobile = mysqli_real_escape_string($con, $_POST['mobile']);
 
                         // Finally, register user if there are no errors in the for
-                        $query = "INSERT INTO details (email, naam, f/h_naam,dob,sex,phn)
-                          VALUES('$name', '$email', '$fh_name','$dob','$gender','$mobile')";
+                        $query = "INSERT INTO details (email, naam, fh_naam,dob,sex,phn)
+                          VALUES('$email','$name' , '$fh_name','$dob','$gender','$mobile')";
                         mysqli_query($con, $query);
-                        $_SESSION['username'] = $name;
+                        $_SESSION['name'] = $name;
                         $_SESSION['success'] = "You are now logged in";
-                        header('location: index.php');
+                        header('location: dashbord.php');
                     }
                 }
 

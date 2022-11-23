@@ -33,7 +33,7 @@ include('dbcon.php'); ?>
 
                 if ($num_row > 0) {
                     $_SESSION['user_id'] = $row['user_id'];
-                    header('location:home.php');
+                    header('location:dashbord.php');
                 } else {
                     echo 'Invalid Username and Password Combination';
                 }
