@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2022 at 07:49 AM
+-- Generation Time: Nov 24, 2022 at 08:44 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `candi_course` (
+  `sl_no` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `crid` int(11) NOT NULL,
   `start` datetime NOT NULL,
@@ -100,7 +101,7 @@ CREATE TABLE `login` (
 -- Indexes for table `candi_course`
 --
 ALTER TABLE `candi_course`
-  ADD PRIMARY KEY (`email`,`crid`),
+  ADD PRIMARY KEY (`sl_no`),
   ADD KEY `Foregen_course` (`crid`);
 
 --
@@ -126,6 +127,12 @@ ALTER TABLE `login`
 --
 
 --
+-- AUTO_INCREMENT for table `candi_course`
+--
+ALTER TABLE `candi_course`
+  MODIFY `sl_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
@@ -139,8 +146,7 @@ ALTER TABLE `courses`
 -- Constraints for table `candi_course`
 --
 ALTER TABLE `candi_course`
-  ADD CONSTRAINT `Foregen_course` FOREIGN KEY (`crid`) REFERENCES `courses` (`crid`),
-  ADD CONSTRAINT `Foregn_email` FOREIGN KEY (`email`) REFERENCES `details` (`email`);
+  ADD CONSTRAINT `Foregen_course` FOREIGN KEY (`crid`) REFERENCES `courses` (`crid`);
 
 --
 -- Constraints for table `details`
