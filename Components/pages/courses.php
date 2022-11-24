@@ -27,7 +27,10 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"> Price: <?php echo $row['amt']; ?></li>
                 <li class="list-group-item">Duration: <?php echo $row['dur']; ?> Minutes</li>
-                <button type="button" class="btn btn-success">Buy</button>
+                <?php
+                $_SESSION['course_id'] = $row['crid'];
+                ?>
+                <button type="button" class="btn btn-success"><a href="./checkout.php">Enroll</a></button>
             </ul>
         </div>
     <?php

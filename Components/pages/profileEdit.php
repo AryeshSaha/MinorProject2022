@@ -90,7 +90,7 @@ session_start();
         } else {
 
             //DP upload
-            $storeFile = '../../public/upload' . $fileName;
+            $storeFile = '../../public/upload/' . $fileName;
             move_uploaded_file($fileTmp, $storeFile);
 
             // first check the database to make sure

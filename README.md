@@ -11,3 +11,5 @@
 8. Navbar in Courses section(search, dashbord, all course)
 9. form sign and wap
 10. refresh validation
+11. Course image need to add
+12. Course duration on checkout page
