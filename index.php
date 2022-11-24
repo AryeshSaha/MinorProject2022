@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./Components/style/style.css">
 
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 
@@ -24,7 +24,7 @@
     <header>
         <a href="#" class="logo">Logo</a>
         <div class="icons">
-            <a href="../Components/Fillups/login.php" id="login-btn">LogIn</a>
+            <a href="./Components/pages/login.php" id="login-btn">LogIn</a>
         </div>
     </header>
 
@@ -47,7 +47,7 @@
     </footer>
 
 
-    <script src="./script.js"></script>
+    <script src="./Components/js/script.js"></script>
 </body>
 
 </html>

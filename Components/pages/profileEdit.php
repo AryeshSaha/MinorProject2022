@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php
-    session_start();
-    // echo $_SESSION['image'];
-    ?>
+<?php
+session_start();
+// echo $_SESSION['image'];
+?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Photo Like FB DP</title>
-    <link rel="stylesheet" href="./edit.css">
+    <link rel="stylesheet" href="../style/edit.css">
 </head>
 
 <body>
@@ -38,7 +38,7 @@
     </form>
 
     <?php
-    include('../../dbcon.php');
+    include('../../util/dbcon.php');
     include('../../util/saveUser.php');
 
     // session_start();
@@ -90,7 +90,7 @@
         } else {
 
             //DP upload
-            $storeFile = '../upload/' . $fileName;
+            $storeFile = '../../public/upload' . $fileName;
             move_uploaded_file($fileTmp, $storeFile);
 
             // first check the database to make sure
@@ -105,7 +105,7 @@
 
 
                 # code...
-                header('location: ../Dashboard/dashbord.php');
+                header('location: dashbord.php');
             }
 
             echo "<script>alert('Can not update')</script>";
@@ -120,7 +120,7 @@
 
 
 
-    <script src=" ./edit.js"></script>
+    <script src=" ../js/edit.js"></script>
 
 </body>
 

@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="./login_style.css">
+    <link rel="stylesheet" type="text/css" href="../style/login_style.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
 
             <div class="inputs">
 
-                <input type="text" placeholder="name" name="name" autofocus/>
+                <input type="text" placeholder="name" name="name" autofocus />
 
                 <input type="text" placeholder="father/husband name" name="fh_name" />
 
@@ -45,7 +45,7 @@
 
 
                 <?php
-                include('../../dbcon.php');
+                include('../../util/dbcon.php');
                 session_start();
 
                 // REGISTER USER
@@ -64,27 +64,21 @@
                     if ($name == "" && $fh_name == "" && $dob == "" && $mobile == "" && $email == "" && $password == "") {
 
                         echo "<script>alert('Fields Can not be empty')</script>";
-
                     } elseif (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
 
                         echo "<script>alert('Only letters and white space allowed in Name fields')</script>";
-
                     } elseif (!preg_match("/^[a-zA-Z-' ]*$/", $fh_name)) {
 
                         echo "<script>alert('Only letters and white space allowed in Name fields')</script>";
-
                     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
                         echo "<script>alert('Invalid email format')</script>";
-
                     } elseif (strlen($mobile) != 10) {
 
                         echo "<script>alert('Mobile Number must be 10 digits')</script>";
-
                     } elseif (strlen($password) < 8) {
 
                         echo "<script>alert('Password must be at least 8 digits')</script>";
-
                     } else {
 
                         // first check the database to make sure
@@ -97,7 +91,6 @@
                         if ($user) { // if user exists
 
                             echo "Email already exist";
-
                         } else {
 
                             $query1 = "INSERT INTO login (email, pass)
@@ -118,7 +111,7 @@
                             $_SESSION['email'] = $email;
                             $_SESSION['success'] = "You are now logged in";
                             $_SESSION['image'] = $dp;
-                            header('location: ../Dashboard/dashbord.php');
+                            header('location: dashbord.php');
                         }
                     }
                 }
