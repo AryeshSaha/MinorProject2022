@@ -64,7 +64,7 @@ $_SESSION['course_name'] = $row['crnaam'];
                     <div class="total-value final-value" id="basket-total"><?php echo $row['amt'] ?></div>
                 </div>
                 <div class="summary-checkout">
-                    <button class="checkout-cta"><a href="./payment.php">Make Payment</a></button>
+                    <button class="checkout-cta"><a <?php echo 'href=" ./payment.php?id=' . $id . '"';  ?>>Make Payment</a></button>
                 </div>
             </div>
         </aside>

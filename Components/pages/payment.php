@@ -83,7 +83,7 @@
         $name = $_SESSION['name'];
         echo "<script> alert('Congrats $name, course add to your accoount')</script>";
         $email = $_SESSION['email'];
-        $id = $_SESSION['course_id'];
+        $id =  $_GET["id"];
 
         $start = date_default_timezone_get();
 
