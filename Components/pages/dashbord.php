@@ -3,6 +3,9 @@
 <?php
 session_start();
 include('../../util/dbcon.php');
+$email = $_SESSION['email'];
+$query = mysqli_query($con, "SELECT * FROM candi_course INNER JOIN courses ON candi_course.crid=courses.crid  WHERE email='$email'");
+
 ?>
 
 <head>
@@ -71,10 +74,17 @@ include('../../util/dbcon.php');
                                     <span>Short by:</span> time
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a href="#">Java</a>
-                                    <a href="#">Python</a>
-                                    <a href="#">Full Stack</a>
-                                    <a href="#">MongoDb</a>
+                                    <?php
+                                    while ($row = mysqli_fetch_array($query)) {
+                                    ?>
+
+                                        <a style="font-size:30px "><?php echo $row['crnaam']; ?></a>
+
+
+                                    <?php } ?>
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -88,9 +98,7 @@ include('../../util/dbcon.php');
                                     <span>Short by:</span> time
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a href="#">C</a>
-                                    <a href="#">SE</a>
-                                    <a href="#">Html, CSS, JS</a>
+                                    <a style="font-size:30px ">You didn't completed any courses</a>
                                 </div>
                             </div>
                         </div>

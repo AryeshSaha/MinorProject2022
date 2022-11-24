@@ -15,6 +15,7 @@
     <?php
     session_start();
     include('../../util/dbcon.php');
+    include('../../util/time.php');
     $query  = mysqli_query($con, "SELECT * FROM courses");
 
     // $num_row = mysqli_num_rows($query);
@@ -26,7 +27,8 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"> Price: <?php echo $row['amt']; ?></li>
-                <li class="list-group-item">Duration: <?php echo $row['dur']; ?> Minutes</li>
+                <li class="list-group-item">Duration: <?php
+                                                        echo calcCourseDuration($row['dur']); ?> Days</li>
                 <?php
                 $_SESSION['course_id'] = $row['crid'];
                 ?>

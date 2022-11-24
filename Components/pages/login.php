@@ -1,5 +1,3 @@
-<?php session_start();
-include('../../util/dbcon.php'); ?>
 <html>
 
 <head>
@@ -23,23 +21,29 @@ include('../../util/dbcon.php'); ?>
                 </div>
             </div>
             <?php
+            session_start();
             if (isset($_POST['login'])) {
+                include('../../util/dbcon.php');
+                include('../../util/saveUser.php');
+
                 $email = mysqli_real_escape_string($con, $_POST['email']);
                 $password = mysqli_real_escape_string($con, $_POST['pass']);
 
-                $query         = mysqli_query($con, "SELECT * FROM login WHERE  pass='$password' and email='$email'");
-                $query1         = mysqli_query($con, "SELECT * FROM details WHERE  email='$email'");
-                $row        = mysqli_fetch_array($query);
-                $row1        = mysqli_fetch_array($query1);
-                $num_row     = mysqli_num_rows($query);
+                $query = mysqli_query($con, "SELECT * FROM login WHERE pass='$password' and email='$email'");
+                $query1 = mysqli_query($con, "SELECT * FROM details WHERE email='$email'");
+                $row = mysqli_fetch_array($query);
+                $row1 = mysqli_fetch_array($query1);
+                $num_row = mysqli_num_rows($query);
 
                 if ($num_row > 0) {
-                    $_SESSION['email'] = $row['email'];
-                    $_SESSION['name'] = $row1['naam'];
-                    $_SESSION['image'] = $row1['dp'];
+
+                    setEmail($row['email']);
+                    setName($row1['naam']);
+                    setImage($row1['dp']);
+
                     header('location:dashbord.php');
                 } else {
-                    echo "<h5 style = 'color: red'>Invalid Username and Password Combination</h5>";
+                    echo "<h5 style='color: red'>Invalid Username and Password Combination</h5>";
                 }
             }
             ?>
