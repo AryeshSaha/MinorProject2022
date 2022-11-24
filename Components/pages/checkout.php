@@ -2,7 +2,7 @@
 <?php
 session_start();
 include('../../util/dbcon.php');
-$id = $_SESSION['course_id'];
+$id =  $_GET["id"];
 $query  = mysqli_query($con, "SELECT * FROM courses WHERE crid='$id'");
 $row   = mysqli_fetch_array($query);
 $_SESSION['course_name'] = $row['crnaam'];
