@@ -42,3 +42,5 @@ ALTER TABLE `candi_course` ADD CONSTRAINT `Foregn_email` FOREIGN KEY (`email`) R
    EXTRAS:
 7. Remove Dp & Confirm Dp
 8. Navbar in Courses section(search, dashbord, all course)
+9. form sign and wap
+10. refresh validation
