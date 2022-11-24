@@ -13,3 +13,4 @@
 10. refresh validation
 11. Course image need to add
 12. Course duration on checkout page
+13. Payment page not solved

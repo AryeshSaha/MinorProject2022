@@ -5,6 +5,7 @@ include('../../util/dbcon.php');
 $id = $_SESSION['course_id'];
 $query  = mysqli_query($con, "SELECT * FROM courses WHERE crid='$id'");
 $row   = mysqli_fetch_array($query);
+$_SESSION['course_name'] = $row['crnaam'];
 
 
 ?>
@@ -63,7 +64,7 @@ $row   = mysqli_fetch_array($query);
                     <div class="total-value final-value" id="basket-total"><?php echo $row['amt'] ?></div>
                 </div>
                 <div class="summary-checkout">
-                    <button class="checkout-cta">Make Payment</button>
+                    <button class="checkout-cta"><a href="./payment.php">Make Payment</a></button>
                 </div>
             </div>
         </aside>
