@@ -46,7 +46,7 @@ $query = mysqli_query($con, "SELECT * FROM candi_course INNER JOIN courses ON ca
                 </div>
                 <div class="navi">
                     <ul>
-                        <li class="active"><a href="../Dashboard/dashbord.php"><i class="fa fa-dashboard" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
+                        <li class="active"><a href="#"><i class="fa fa-dashboard" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Dashboard</span></a></li>
 
                         <li><a href="./courses.php"><i class="fa fa-file-text" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Courses</span></a></li>
 
