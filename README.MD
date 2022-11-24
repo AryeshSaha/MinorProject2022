@@ -1,4 +1,4 @@
-<!-- * Databases -->
+<!-- * Databases * -->
 
 -----COURSES TABLE(dummy table)
 
