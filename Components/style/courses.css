@@ -22,3 +22,9 @@
 .nav-item a:hover{
     color: black !important;
 }
+
+.srches{
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}

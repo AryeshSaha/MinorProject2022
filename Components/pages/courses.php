@@ -30,9 +30,9 @@
             <a class="nav-link" href="./dashbord.php">Dashboard</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search courses" aria-label="Search">
-          <button class="btn btn-outline-light" type="submit">Search</button>
+        <form class="d-flex" action="search.php" method="GET">
+          <input class="form-control me-2" type="search" placeholder="Search courses" aria-label="Search" name="query">
+          <button class="btn btn-outline-light" type="submit" name="search">Search</button>
         </form>
       </div>
     </div>

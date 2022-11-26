@@ -12,11 +12,15 @@
 <!-- 10. Payment page not solved > Validation -->
 <!-- 11. Checkout.php - Add Courses > Courses.php - enroll > Checkout.php -->
 <!-- 12. Fix the alert in payment page -->
-13. Course page search box logic
+<!-- 13. Course page search box logic -->
 <!-- 14. course page -> avialable courses and dashbord css -->
 <!-- 15. dashbord -> photo , start course button -->
 <!-- 16. Static pics change in carousel of index -->
+17. Search.php CSS add hbe when there's no results
+18. Admin Profile
+
+
 so ami ki chai: Ami chai
-all courses dekhanor ekta page hbe (Already there)
-ekta page e search values dekhabo and tokhn other courses gulo chole jbe
-then all courses tiple back to all courses page e chole jbe (Already there)
+* all courses dekhanor ekta page hbe (Already there)
+* ekta page e search values dekhabo and tokhn other courses gulo chole jbe (done)
+* then all courses tiple back to all courses page e chole jbe (Already there)
