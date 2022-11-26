@@ -33,7 +33,7 @@
 
 
 
-                <button type="button" class="btn btn-success"><a <?php echo 'href=" ./checkout.php?id=' . $id . '"';  ?>>Enroll</a></button>
+                <a class="btn btn-success" <?php echo 'href=" ./checkout.php?id=' . $id . '"';  ?>>Enroll</a>
             </ul>
         </div>
     <?php

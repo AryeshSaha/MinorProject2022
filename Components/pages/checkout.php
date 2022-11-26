@@ -2,6 +2,7 @@
 <?php
 session_start();
 include('../../util/dbcon.php');
+include('../../util/time.php');
 $id =  $_GET["id"];
 $query  = mysqli_query($con, "SELECT * FROM courses WHERE crid='$id'");
 $row   = mysqli_fetch_array($query);
@@ -27,6 +28,7 @@ $_SESSION['course_name'] = $row['crnaam'];
             <div class="basket-labels">
                 <ul>
                     <li class="item item-heading">Item</li>
+                    <li class="price">Duration</li>
                     <li class="price">Price</li>
                     <!-- <li class="quantity">Quantity</li>
                     <li class="subtotal">Subtotal</li> -->
@@ -38,12 +40,13 @@ $_SESSION['course_name'] = $row['crnaam'];
                         <img src="https://miro.medium.com/max/1024/0*0qvaZ1DA13ykgwUg" alt="Placholder Image 2" class="product-frame">
                     </div>
                     <div class="product-details">
-                        <h1><strong><span class="item-quantity"></span><?php echo $row['crnaam'] ?></strong></h1>
+                        <h1><strong><?php echo $row['crnaam'] ?></strong></h1>
                     </div>
                 </div>
-                <div class="price"><?php echo $row['amt'] ?></div>
+                <div class="price"><?php echo calcCourseDuration($row['dur']); ?> Days</div>
+                <div class="price">₹<?php echo $row['amt']; ?></div>
                 <div class="remove">
-                    <button>Remove</button>
+                    <a href="dashbord.php"><button>Remove</button></a>
                 </div>
             </div>
 
@@ -53,7 +56,7 @@ $_SESSION['course_name'] = $row['crnaam'];
                 <div class="summary-total-items"><span class="total-items"></span> Items in your Bag</div>
                 <div class="summary-subtotal">
                     <div class="subtotal-title">Subtotal</div>
-                    <div class="subtotal-value final-value" id="basket-subtotal"><?php echo $row['amt'] ?></div>
+                    <div class="subtotal-value final-value" id="basket-subtotal">₹<?php echo $row['amt'] ?></div>
                     <div class="summary-promo hide">
                         <div class="promo-title">Promotion</div>
                         <div class="promo-value final-value" id="basket-promo"></div>
@@ -61,10 +64,10 @@ $_SESSION['course_name'] = $row['crnaam'];
                 </div>
                 <div class="summary-total">
                     <div class="total-title">Total</div>
-                    <div class="total-value final-value" id="basket-total"><?php echo $row['amt'] ?></div>
+                    <div class="total-value final-value" id="basket-total">₹<?php echo $row['amt'] ?></div>
                 </div>
                 <div class="summary-checkout">
-                    <button class="checkout-cta"><a <?php echo 'href=" ./payment.php?id=' . $id . '"';  ?>>Make Payment</a></button>
+                    <a <?php echo 'href=" ./payment.php?id=' . $id . '"';  ?>><button class="checkout-cta">Make Payment</button></a>
                 </div>
             </div>
         </aside>
