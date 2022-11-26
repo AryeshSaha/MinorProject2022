@@ -3,7 +3,7 @@
 <!-- 1. Payment Page -->
 2. Pass Chg & Forget Pass
 3. Edit option - add picture - display picture - Back to Dashboard
-4. Front end - dashboard dp, login bg, courses.php>enroll button style
+4. Front end - dashboard dp, login bg, courses.php>enroll button style, in dashboard sort by dropdown
 5. Backend - Database courses add img
 6. Remove Dp & Confirm Dp
 <!-- 7. Navbar in Courses section(search, dashboard, all course) -->

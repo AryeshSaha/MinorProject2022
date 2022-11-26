@@ -17,7 +17,7 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light bg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="./dashbord.php">Logo</a>
+      <a class="navbar-brand" href="./dashbord.php"><img src="https://kolkatahormonefoundation.org/wp-content/uploads/2021/06/Kolkata-Hormone-Foundation-304x61.png" alt="" srcset=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -51,7 +51,7 @@
     $id = $row['crid'];
   ?>
     <div class="card" style="width: 18rem">
-      <img src="<?php echo $row['crimg']; ?>" class="card-img-top" alt="...">
+      <img src="<?php echo $row['crimg']; ?>" class="card-img-top" alt="courseImg">
       <div class="card-body">
         <h5 class="card-title"><?php echo $row['crnaam']; ?></h5>
       </div>

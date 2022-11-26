@@ -121,7 +121,7 @@
             </div>
         </div>
         <div class="center">
-            &copy; Copyright team4 | All rights reserved!
+            &copy; Copyright team 4 | All Rights Reserved |
         </div>
     </footer>
 
