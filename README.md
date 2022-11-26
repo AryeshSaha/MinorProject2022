@@ -8,7 +8,7 @@
 6. Remove Dp & Confirm Dp
 <!-- 7. Navbar in Courses section(search, dashboard, all course) -->
 8. Payment page confirmation page CSS add
-9. Course duration on checkout page
+9. Course duration and remove on checkout page
 <!-- 10. Payment page not solved > Validation -->
 11. Checkout.php - Add Courses > Courses.php - enroll > Checkout.php
 <!-- 12. Fix the alert in payment page -->

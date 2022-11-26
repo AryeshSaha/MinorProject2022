@@ -27,7 +27,7 @@
                 <h5 class="card-title"><?php echo $row['crnaam']; ?></h5>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"> Price: <?php echo $row['amt']; ?></li>
+                <li class="list-group-item"> Price: <?php echo $row['amt']; ?>/-</li>
                 <li class="list-group-item">Duration: <?php
                                                         echo calcCourseDuration($row['dur']); ?> Days</li>
 
