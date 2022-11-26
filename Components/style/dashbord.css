@@ -57,11 +57,22 @@
 
 .dropdown-menu {
   display: flex;
-  flex-direction: row;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center;
+}
+
+.product-image{
+  margin: 20px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-image img {
-  width: 40%;
+  /* border: 2px solid yellow !important; */
+  width: 10%;
+  margin-right: 15px !important;
 }
 
 .start-course-btn {
@@ -72,6 +83,7 @@
   font-weight: 300 !important;
   padding: 10px 40px !important;
   position: relative !important;
+  right: 70px;
 }
 .start-course-btn a{
   text-decoration: none;

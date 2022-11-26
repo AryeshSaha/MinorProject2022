@@ -75,22 +75,23 @@ $query = mysqli_query($con, "SELECT * FROM candi_course INNER JOIN courses ON ca
                                 </button>
                                 <div class="dropdown-menu">
 
-                                    <div class="product-image">
-                                        <img src="https://coursesxpert.com/wp-content/uploads/2020/10/Acupuncture-Courses.jpg" alt="Placholder Image 2" class="product-frame">
-                                    </div>
-
                                     <?php
                                     while ($row = mysqli_fetch_array($query)) {
                                     ?>
+                                    
+                                        <div class="product-image">
+                                            <img src="<?php echo $row['crimg']; ?>" alt="Placholder Image 2" class="product-frame">
+                                            <a style="font-size:30px "><?php echo $row['crnaam']; ?></a>
+                                        </div>
 
-                                        <a style="font-size:30px "><?php echo $row['crnaam']; ?></a>
 
+
+                                        <div class="modal-footer">
+                                        <button type="button" class="start-course-btn"><a href="#">Start Course</a></button>
+                                        </div>
 
                                     <?php } ?>
 
-                                    <div class="modal-footer">
-                                    <button type="button" class="start-course-btn"><a href="#">Start Course</a></button>
-                                    </div>
                                     
 
 
@@ -107,7 +108,7 @@ $query = mysqli_query($con, "SELECT * FROM candi_course INNER JOIN courses ON ca
                                     <span>Sort by:</span> time
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a style="font-size:30px ">You didn't completed any courses</a>
+                                    <a style="font-size:30px ">You didn't complete any courses yet</a>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +130,7 @@ $query = mysqli_query($con, "SELECT * FROM candi_course INNER JOIN courses ON ca
             <div class="modal-content">
 
                 <div class="modal-footer">
-                    <button type="button" class="cancel" data-dismiss="modal"><a href="../../util/Logout.php">Logout</a></button>
+                <a href="../../util/Logout.php"><button type="button" class="cancel" data-dismiss="modal">Logout</button></a>
                     <!-- <button type="button" class="add-project" data-dismiss="modal">Save</button> -->
                 </div>
             </div>
