@@ -52,7 +52,7 @@
                 <p>Don't have an account?<a href="./signup.php"> Signup here</a></p>
             </div>
             <div class="forgot__password">
-                <a href="#">Forgot password?</a>
+                <a href="ForgotPassword.php">Forgot password?</a>
             </div>
         </form>
 
