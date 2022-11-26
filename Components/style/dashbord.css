@@ -50,6 +50,35 @@
   color: #5584ff;
 }
 
+/*  */
+.sort-btn {
+  float: right;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-image img {
+  width: 40%;
+}
+
+.start-course-btn {
+  background-color: #0e1a35 !important;
+  border: medium none !important;
+  border-radius: 100px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  padding: 10px 40px !important;
+  position: relative !important;
+}
+.start-course-btn a{
+  text-decoration: none;
+  color: white;
+}
+/*  */
+
 .sm-icons {
   bottom: 0;
   text-align: center;
@@ -124,15 +153,15 @@ ul {
   margin-right: 0px;
 }
 
-.login-header .nav-tabs > li.active > a,
-.login-header .nav-tabs > li.active > a:focus,
-.login-header .nav-tabs > li.active > a:hover {
+.login-header .nav-tabs>li.active>a,
+.login-header .nav-tabs>li.active>a:focus,
+.login-header .nav-tabs>li.active>a:hover {
   background-color: transparent;
   border: none;
   color: #fff;
 }
 
-.login-header .nav-tabs > li > a {
+.login-header .nav-tabs>li>a {
   border: medium none;
   border-radius: 0;
   font-size: 14px;
@@ -146,17 +175,17 @@ ul {
   border-bottom: none;
 }
 
-.login-header .nav-tabs > li {
+.login-header .nav-tabs>li {
   margin-bottom: 0px;
 }
 
-.login-header .nav > li > a:focus,
-.login-header .nav > li > a:hover {
+.login-header .nav>li>a:focus,
+.login-header .nav>li>a:hover {
   background: none;
   text-decoration: none;
 }
 
-.login-header .nav-tabs > li.active {
+.login-header .nav-tabs>li.active {
   border-bottom: 6px solid #5584ff;
 }
 
@@ -202,18 +231,15 @@ ul {
 }
 
 .user input {
-  background: rgba(0, 0, 0, 0) url("../images/user.png") no-repeat scroll 7px
-    12px;
+  background: rgba(0, 0, 0, 0) url("../images/user.png") no-repeat scroll 7px 12px;
 }
 
 .pass input {
-  background: rgba(0, 0, 0, 0) url("../images/password.png") no-repeat scroll
-    7px 12px;
+  background: rgba(0, 0, 0, 0) url("../images/password.png") no-repeat scroll 7px 12px;
 }
 
 .mail input {
-  background: rgba(0, 0, 0, 0) url("../images/mail.png") no-repeat scroll 4px
-    12px;
+  background: rgba(0, 0, 0, 0) url("../images/mail.png") no-repeat scroll 4px 12px;
 }
 
 .login-signup .tab-content {
@@ -321,8 +347,8 @@ ul {
   position: relative;
 }
 
-.header-rightside .nav > li > a:focus,
-.header-rightside .nav > li > a:hover {
+.header-rightside .nav>li>a:focus,
+.header-rightside .nav>li>a:hover {
   background: none;
   text-decoration: none;
 }
@@ -394,7 +420,7 @@ ul {
   padding: 10px 15px;
 }
 
-.navbar-content > span {
+.navbar-content>span {
   font-size: 13px;
   font-weight: 700;
 }
@@ -415,8 +441,7 @@ ul {
   font-size: 15px;
   padding: 15px 9px;
   width: 100%;
-  background: rgba(0, 0, 0, 0) url("../images/search.png") no-repeat scroll 99%
-    12px;
+  background: rgba(0, 0, 0, 0) url("../images/search.png") no-repeat scroll 99% 12px;
   color: #8492af;
 }
 
@@ -549,7 +574,7 @@ header {
   padding: 9px 0 0;
 }
 
-.btn.btn-secondary.btn-lg.dropdown-toggle > span {
+.btn.btn-secondary.btn-lg.dropdown-toggle>span {
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -570,7 +595,7 @@ header {
   box-shadow: none;
 }
 
-.sales .dropdown-menu > a {
+.sales .dropdown-menu>a {
   color: #0e1a35;
   display: inline-block;
   font-weight: 800;
@@ -583,7 +608,7 @@ header {
   width: 100%;
 }
 
-.sales .dropdown-menu > a:hover {
+.sales .dropdown-menu>a:hover {
   color: #5584ff;
 }
 
@@ -655,6 +680,7 @@ header {
   padding: 10px 30px;
   position: relative;
 }
+
 .cancel a {
   text-decoration: none;
   color: white;
@@ -684,7 +710,7 @@ header {
       margin: 0 auto;
     }
 
-    .login-details .nav-tabs > li {
+    .login-details .nav-tabs>li {
       text-align: center;
       width: 50%;
     }
@@ -777,7 +803,7 @@ header {
       padding: 13px 0 0;
     }
 
-    .user-dashboard .btn.btn-secondary.btn-lg.dropdown-toggle > span {
+    .user-dashboard .btn.btn-secondary.btn-lg.dropdown-toggle>span {
       font-size: 11px;
     }
 
@@ -825,7 +851,7 @@ header {
       font-size: 10px;
     }
 
-    .user-dashboard .btn.btn-secondary.btn-lg.dropdown-toggle > span {
+    .user-dashboard .btn.btn-secondary.btn-lg.dropdown-toggle>span {
       font-size: 12px;
     }
 

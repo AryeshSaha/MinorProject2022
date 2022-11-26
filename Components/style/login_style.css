@@ -1,6 +1,7 @@
 body {
-  background: #121fcf;
-  background: linear-gradient(to top, #121fcf 0%, #cf1512 100%);
+  /* background: #121fcf;
+  background: linear-gradient(to top, #121fcf 0%, #cf1512 100%); */
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
   font-family: "Helvetica Neue", Helvetica, Arial;
 }
 

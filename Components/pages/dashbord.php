@@ -70,10 +70,15 @@ $query = mysqli_query($con, "SELECT * FROM candi_course INNER JOIN courses ON ca
                             <h2>Your Courses</h2>
 
                             <div class="btn-group">
-                                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-secondary btn-lg dropdown-toggle sort-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span>Sort by:</span> time
                                 </button>
                                 <div class="dropdown-menu">
+
+                                    <div class="product-image">
+                                        <img src="https://coursesxpert.com/wp-content/uploads/2020/10/Acupuncture-Courses.jpg" alt="Placholder Image 2" class="product-frame">
+                                    </div>
+
                                     <?php
                                     while ($row = mysqli_fetch_array($query)) {
                                     ?>
@@ -83,6 +88,10 @@ $query = mysqli_query($con, "SELECT * FROM candi_course INNER JOIN courses ON ca
 
                                     <?php } ?>
 
+                                    <div class="modal-footer">
+                                    <button type="button" class="start-course-btn"><a href="#">Start Course</a></button>
+                                    </div>
+                                    
 
 
                                 </div>
@@ -94,7 +103,7 @@ $query = mysqli_query($con, "SELECT * FROM candi_course INNER JOIN courses ON ca
                         <div class="sales report">
                             <h2>Completed</h2>
                             <div class="btn-group">
-                                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-secondary btn-lg dropdown-toggle sort-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span>Sort by:</span> time
                                 </button>
                                 <div class="dropdown-menu">
