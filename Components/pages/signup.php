@@ -41,7 +41,7 @@
                 <input type="password" placeholder="Password" name="pass" />
 
 
-                <button id="submit" name="signup">SIGN UP NOW</button>
+                <button type="submit" id="submit" name="signup">SIGN UP NOW</button>
 
 
                 <?php
@@ -63,22 +63,22 @@
                     //VALIDATION
                     if ($name == "" && $fh_name == "" && $dob == "" && $mobile == "" && $email == "" && $password == "") {
 
-                        echo "<script>alert('Fields Can not be empty')</script>";
+                        echo "<h5 style='color:red'>Fields Can not be empty</h5>";
                     } elseif (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
 
-                        echo "<script>alert('Only letters and white space allowed in Name fields')</script>";
+                        echo "<h5 style='color:red'>Only letters and white space allowed in Name fields</h5>";
                     } elseif (!preg_match("/^[a-zA-Z-' ]*$/", $fh_name)) {
 
-                        echo "<script>alert('Only letters and white space allowed in Name fields')</script>";
+                        echo "<h5 style='color:red'>Only letters and white space allowed in Name fields</h5>";
                     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-                        echo "<script>alert('Invalid email format')</script>";
+                        echo "<h5 style='color:red'>Invalid email format</h5>";
                     } elseif (strlen($mobile) != 10) {
 
-                        echo "<script>alert('Mobile Number must be 10 digits')</script>";
+                        echo "<h5 style='color:red'>Mobile Number must be 10 digits</h5>";
                     } elseif (strlen($password) < 8) {
 
-                        echo "<script>alert('Password must be at least 8 digits')</script>";
+                        echo "<h5 style='color:red'>Password must be at least 8 digits</h5>";
                     } else {
 
                         // first check the database to make sure

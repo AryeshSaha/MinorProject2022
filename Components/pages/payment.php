@@ -15,61 +15,76 @@
             <div class="row">
                 <div class="col">
                     <h3 class="title">billing address</h3>
+
                     <div class="inputBox">
                         <span>full name :</span>
-                        <input type="text" name="name" placeholder="Enter your full name">
+                        <input type="text" name="name" placeholder="Enter your full name" required>
                     </div>
+
                     <div class="inputBox">
                         <span>email :</span>
-                        <input type="email" name="email" placeholder="Enter your email">
+                        <input type="email" name="email" placeholder="Enter your email" required>
                     </div>
+
                     <div class="inputBox">
                         <span>address :</span>
-                        <input type="text" name="address" placeholder="Enter your address">
+                        <input type="text" name="address" placeholder="Enter your address" required>
                     </div>
+
                     <div class="inputBox">
                         <span>city :</span>
-                        <input type="text" name="city" placeholder="Enter your city">
+                        <input type="text" name="city" placeholder="Enter your city" required>
                     </div>
+
                     <div class="flex">
+
                         <div class="inputBox">
                             <span>state :</span>
-                            <input type="text" name="state" placeholder="Enter your state">
+                            <input type="text" name="state" placeholder="Enter your state" required>
                         </div>
+
                         <div class="inputBox">
                             <span>zip code :</span>
-                            <input type="text" name="pin" placeholder="Enter your pin">
+                            <input type="text" name="pin" placeholder="Enter your pin" required>
                         </div>
+
                     </div>
                 </div>
                 <div class="col">
                     <h3 class="title">payment</h3>
+                    
                     <div class="inputBox">
                         <span>cards accepted :</span>
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwiw9Wp26Quv9pWS1TClQ_OKvzhtgxEL02WA&usqp=CAU.png" alt="we accept these cards">
                     </div>
+
                     <div class="inputBox">
                         <span>name on the card :</span>
-                        <input type="text" name="bill_name" placeholder="Your Name">
+                        <input type="text" name="bill_name" placeholder="Your Name" required>
                     </div>
+
                     <div class="inputBox">
                         <span>credit/debit card number :</span>
-                        <input type="number" placeholder="xxxx-xxxx-xxxx-xxxx">
+                        <input type="number" placeholder="xxxx-xxxx-xxxx-xxxx" maxlength="19" required>
                     </div>
+
                     <div class="inputBox">
                         <span>exp month :</span>
-                        <input type="text" placeholder="Month">
+                        <input type="text" placeholder="Month" required>
                     </div>
 
                     <div class="flex">
+
                         <div class="inputBox">
                             <span>exp year :</span>
-                            <input type="number" placeholder="Year">
+                            <input type="number" placeholder="Year" required>
                         </div>
+
                         <div class="inputBox">
                             <span>CVV :</span>
-                            <input type="text" placeholder="cvv">
+                            <input type="number" placeholder="Must be 3 digits" maxlength="3" minlength="3" required>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -81,7 +96,6 @@
         include('../../util/dbcon.php');
         session_start();
         $name = $_SESSION['name'];
-        echo "<script> alert('Congrats $name, course add to your accoount')</script>";
         $email = $_SESSION['email'];
         $id =  $_GET["id"];
 
@@ -90,7 +104,7 @@
         $query = "INSERT INTO candi_course (email, crid , start)
                               VALUES('$email','$id' ,'$start')";
         mysqli_query($con, $query);
-        header('location: dashbord.php');
+        header('location: confirmation.php');
     }
     ?>
 

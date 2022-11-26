@@ -42,7 +42,7 @@
 
     <footer>
         <div class="center">
-            &copy; Copyright minorproject | All rights reserved!
+            &copy; Copyright Group 4 BCA | All Rights Reserved |
         </div>
     </footer>
 
