@@ -7,6 +7,7 @@ $id =  $_GET["id"];
 $query  = mysqli_query($con, "SELECT * FROM courses WHERE crid='$id'");
 $row   = mysqli_fetch_array($query);
 $_SESSION['course_name'] = $row['crnaam'];
+$img = $row['crimg'];
 
 
 ?>
@@ -37,7 +38,7 @@ $_SESSION['course_name'] = $row['crnaam'];
             <div class="basket-product">
                 <div class="item">
                     <div class="product-image">
-                        <img src="https://miro.medium.com/max/1024/0*0qvaZ1DA13ykgwUg" alt="Placholder Image 2" class="product-frame">
+                        <img src=<?php echo $img ?> alt="Placholder Image 2" class="product-frame">
                     </div>
                     <div class="product-details">
                         <h1><strong><?php echo $row['crnaam'] ?></strong></h1>
