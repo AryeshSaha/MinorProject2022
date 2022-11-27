@@ -47,7 +47,7 @@
                 if (otp === pass) {
                     console.log('Match');
                     console.log(pass);
-                    window.location.href = "./reset.php"
+                    window.location.href = "./ResetPass.php"
                 }
 
 
