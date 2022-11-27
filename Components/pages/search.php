@@ -39,22 +39,25 @@
     </nav>
 
 
-
+    
     <?php
     session_start();
     include('../../util/dbcon.php');
     include('../../util/time.php');
-
-
+    
+    
     $srch = mysqli_real_escape_string($con, $_GET['query']);
     $query = "SELECT * FROM `courses` WHERE MATCH(crnaam) AGAINST ('$srch')";
     $result = mysqli_query($con, $query);
     $sucksex = true;
+    ?>
 
+    <h1 class="srches">Search results for: "<b> <?php echo $srch ?> </b>"</h1>
+    
+    <?php
     while ($row   = mysqli_fetch_assoc($result)) {
         $sucksex = false;
     ?>
-        <h1 class="srches">Search results for: <?php echo $srch ?></h1>
         <div class="card" style="width: 18rem">
             <img src="<?php echo $row['crimg']; ?>" class="card-img-top" alt="courseImg">
             <div class="card-body">
@@ -73,12 +76,17 @@
 
     if ($sucksex) {
     ?>
-        <h1 class="srches">Search results for: <?php echo $srch ?></h1>
-        <ul>
-            <li>Try being a little bit more specific</li>
-            <li>Try checking your internet connection</li>
-            <li>If none of the above methods work, then we probably don't have the course</li>
-        </ul>
+        <div class="noresults">
+            <h2 class="srches">No Results Sorry.😥</h2>
+            <h3 class="srches">Suggestions: </h3>
+            <div class="srch-ul">
+                <ul>
+                    <li>Make sure that all the words are spelled correctly</li>
+                    <li>Try checking your internet connection</li>
+                    <li>Try different keywords</li>
+                </ul>
+            </div>
+        </div>
     <?php
     }
     ?>
