@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
+include('../../util/dbcon.php');
 session_start();
 // echo $_SESSION['image'];
 ?>
@@ -8,13 +9,14 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Photo Like FB DP</title>
+    <title>Edit Profile</title>
     <link rel="stylesheet" href="../style/edit.css">
 </head>
 
 <body>
     <h1>Edit Profile</h1>
     <hr>
+    <a href="./dashbord.php"><button class="btn">Back</button></a>
     <form action="#" method="post" enctype="multipart/form-data">
 
         <div class="profile-pic-div">
@@ -23,7 +25,7 @@ session_start();
             <img src="<?php echo $_SESSION['image'] ?>" id="photo">
             </input>
         </div>
-
+        
         <div class="container">
             <input type="text" placeholder="name" name="name">
             <input type="text" placeholder="father/husband name" name="fh_name">
@@ -38,7 +40,7 @@ session_start();
     </form>
 
     <?php
-    include('../../util/dbcon.php');
+
     include('../../util/saveUser.php');
 
     // session_start();
