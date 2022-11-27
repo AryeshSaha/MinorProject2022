@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" href="../style/ForPass.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.0/axios.js" integrity="sha512-nNH8gXanGmEPnnK9/yhI3ETaIrujVVJ7dstiVIwMtcfbcj1zzTlnH5whbsYhg6ihg5mFe1xNkPPLwCwwvSAUdQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Forgot Password</title>
 </head>
 
@@ -10,50 +11,35 @@
         <div class="form-group">
             <form action="#" method="post">
                 <p><label for="username">Enter your email address</label></p>
-                <input type="email" name="user_email" id="user_email">
-                <button name="enter_email">Submit</button><br><br>
+                <input type="text" name="email" id="user_email" required>
+                <button type="submit" name="user_email">Submit</button><br><br>
             </form>
             <?php
             session_start();
-            if (isset($_POST['enter_email'])) {
+            if (isset($_POST['user_email'])) {
                 include('../../util/dbcon.php');
-                include('../../util/saveUser.php');
-                include('../../util/getOtp.php');
 
-                $email = mysqli_real_escape_string($con, $_POST['user_email']);
+                $email = mysqli_real_escape_string($con, $_POST['email']);
 
-
-                $query = mysqli_query($con, "SELECT * FROM login WHERE  email='$email'");
+                $query = mysqli_query($con, "SELECT * FROM login WHERE   email='$email'");
                 $row = mysqli_fetch_array($query);
                 $num_row = mysqli_num_rows($query);
 
                 if ($num_row > 0) {
-                    $otp =  getOTP();
-                    $_SESSION['otp'] = $otp;
-                    $msg = "Your six digit OTP is $otp\n please verify this within\n 10 minutes or ignore this";
-
-                    $to = 'sumandhali8420728705@gmail.com';
-                    $subject = 'Password change!';
-
-                    $headers = "From: dhalisuman001@gmail.com\r\n";
-                    if (mail($to, $subject, $msg, $headers)) {
-                        echo "SUCCESS";
-                    } else {
-                        echo "ERROR";
-                    }
+                    $_SESSION['email'] = $email;
+                    header('location:Otp.php');
                 } else {
-                    echo "<h5 style='color: red'>Email does not exist</h5>";
+                    echo "<h5 style='color: red'>Account doesn't exist</h5>";
                 }
             }
 
+
             ?>
-            <p><label for="otp">Enter the OTP</label></p>
-            <input type="otp" name="otp" id="otp">
-            <button>Verify</button>
         </div>
         <div class="footer">
             <h5>New here? <a href="signup.html" target="_blank">Sign Up</a></h5>
             <h5>Already have an account? <a href="login.html" target="_blank">Log In</a></h5>
         </div>
+
     </div>
 </body>
