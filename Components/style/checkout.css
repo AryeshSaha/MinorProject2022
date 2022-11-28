@@ -172,6 +172,7 @@ li.subtotal:before {
   float: none;
   text-decoration: underline;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .item-heading {
@@ -275,6 +276,7 @@ aside {
   text-transform: uppercase;
   padding: 0.625rem 0;
   width: 100%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 640px) {

@@ -39,13 +39,13 @@
     </nav>
 
 
-    
+
     <?php
     session_start();
     include('../../util/dbcon.php');
     include('../../util/time.php');
-    
-    
+
+
     $srch = mysqli_real_escape_string($con, $_GET['query']);
     $query = "SELECT * FROM `courses` WHERE MATCH(crnaam) AGAINST ('$srch')";
     $result = mysqli_query($con, $query);
@@ -53,31 +53,44 @@
     ?>
 
     <h1 class="srches">Search results for: "<b> <?php echo $srch ?> </b>"</h1>
-    
+    <div class="course">  
+
     <?php
     while ($row   = mysqli_fetch_assoc($result)) {
+        $id = $row['crid'];
         $sucksex = false;
     ?>
-        <div class="card" style="width: 18rem">
-            <img src="<?php echo $row['crimg']; ?>" class="card-img-top" alt="courseImg">
-            <div class="card-body">
-                <h5 class="card-title"><?php echo $row['crnaam']; ?></h5>
+        <div class="contain">
+            <div class="cardes">
+                <img src="<?php echo $row['crimg']; ?>" alt="courseImg" />
+                <div class="cardes-body">
+                    <div class="rowes">
+                        <div class="cardes-title">
+                            <h4><?php echo $row['crnaam']; ?></h4>
+                            <h3>₹<?php echo $row['amt']; ?>/-</h3>
+                        </div>
+                    </div>
+                    <hr />
+                    <p> Duration:
+                        <?php
+                        echo calcCourseDuration($row['dur']); ?> Days
+                    </p>
+                    <div class="btns-group">
+                        <div class="btns">
+                            <a <?php echo 'href=" ./checkout.php?id=' . $id . '"';  ?>>Enroll Now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"> Price: ₹<?php echo $row['amt']; ?>/-</li>
-                <li class="list-group-item">Duration: <?php
-                                                        echo calcCourseDuration($row['dur']); ?> Days</li>
-
-                <a class="btn btn-success" <?php echo 'href=" ./checkout.php?id=' . $row['crid'] . '"';  ?>>Enroll</a>
-            </ul>
         </div>
     <?php
     }
 
     if ($sucksex) {
     ?>
+    </div>
         <div class="noresults">
-            <h2 class="srches">No Results Sorry.😥</h2>
+            <h2 class="srches">No Results Sorry😥</h2>
             <h3 class="srches">Suggestions: </h3>
             <div class="srch-ul">
                 <ul>

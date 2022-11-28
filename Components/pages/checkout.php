@@ -47,7 +47,7 @@ $img = $row['crimg'];
                 <div class="price"><?php echo calcCourseDuration($row['dur']); ?> Days</div>
                 <div class="price">₹<?php echo $row['amt']; ?></div>
                 <div class="remove">
-                    <a href="dashbord.php"><button>Remove</button></a>
+                    <a href="dashbord.php"><button class="rem">Remove</button></a>
                 </div>
             </div>
 
