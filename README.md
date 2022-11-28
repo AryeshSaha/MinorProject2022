@@ -16,4 +16,3 @@
 <!-- 15. dashbord -> photo , start course button -->
 <!-- 16. Static pics change in carousel of index -->
 <!-- 17. Search.php CSS add hbe when there's no results -->
-18. Admin Profile
