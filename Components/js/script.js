@@ -12,3 +12,7 @@ function typeWrite() {
         setTimeout(typeWrite, speed);
     }
 }
+
+// Date      
+var tomorrow = new Date();
+document.getElementById("spanDate").innerHTML =tomorrow.getFullYear();

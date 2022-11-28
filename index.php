@@ -120,7 +120,7 @@
                 </div>
             </div>
             <div class="center">
-                &copy; Copyright TEAM 4 | All Rights Reserved |
+                &copy; Copyright TEAM 4 BCA | All Rights Reserved | <span id="spanDate"></span>
             </div>
         </div>
     </footer>
