@@ -123,6 +123,8 @@ ALTER TABLE `courses`
 --
 ALTER TABLE `details`
   ADD PRIMARY KEY (`email`);
+  ALTER TABLE `courses` ADD FULLTEXT KEY `crnaam` (`crnaam`);
+  ALTER TABLE `courses` ADD FULLTEXT KEY `crnaam_2` (`crnaam`);
 
 --
 -- Indexes for table `login`
