@@ -2,9 +2,7 @@
 include('../../util/dbcon.php');
 session_start();
 $name = $_SESSION['name'];
-$query  = mysqli_query($con, "SELECT * FROM courses");
-$row   = mysqli_fetch_array($query);
-$crnaam = $row['crnaam'];
+$crnaam = $_SESSION['course_name'];
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -52,7 +52,7 @@
                 </div>
                 <div class="col">
                     <h3 class="title">payment</h3>
-                    
+
                     <div class="inputBox">
                         <span>cards accepted :</span>
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwiw9Wp26Quv9pWS1TClQ_OKvzhtgxEL02WA&usqp=CAU.png" alt="we accept these cards">
