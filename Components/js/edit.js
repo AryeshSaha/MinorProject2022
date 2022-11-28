@@ -35,3 +35,7 @@ file.addEventListener("change", function () {
     reader.readAsDataURL(choosedFile);
   }
 });
+
+const toDash = () => {
+  window.location.href("./dashbord.php");
+}

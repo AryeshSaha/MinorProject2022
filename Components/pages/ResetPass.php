@@ -9,9 +9,9 @@
         <div class="form-group">
             <form action="#" method="post">
                 <p><label for="username">Enter New Password</label></p>
-                <input type="new_password" name="newpassword" id="newpassword">
+                <input type="password" name="newpassword" id="newpassword">
                 <p><label for="username">Confirm New Password</label></p>
-                <input type="confirm_password" name="confirmpassword" id="confirmpassword">
+                <input type="password" name="confirmpassword" id="confirmpassword">
                 <button type="submit" name="change_password">Reset Password</button>
             </form>
         </div>
@@ -22,18 +22,23 @@
             include('../../util/saveUser.php');
             $email = $_SESSION['email'];
             $new_password = mysqli_real_escape_string($con, $_POST['newpassword']);
-            $old_password = mysqli_real_escape_string($con, $_POST['confirmpassword']);
+            $conf_password = mysqli_real_escape_string($con, $_POST['confirmpassword']);
 
-            $query = mysqli_query($con, "UPDATE login SET pass='$new_password' WHERE  email='$email'");
-
-
-
-
-            if ($query) {
-                header('location:login.php');
+            if($new_password != $conf_password){
+                echo "<h5 style='color: red'>Passwords don't match</h5>";
             } else {
-                echo "<h5 style='color: red'>Something wrong happen</h5>";
+                $query = mysqli_query($con, "UPDATE login SET pass='$conf_password' WHERE  email='$email'");
+    
+    
+    
+    
+                if ($query) {
+                    header('location:login.php');
+                } else {
+                    echo "<h5 style='color: red'>Something wrong happen</h5>";
+                }
             }
+            
         }
         ?>
     </div>

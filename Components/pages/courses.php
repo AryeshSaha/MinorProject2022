@@ -40,34 +40,47 @@
 
 
 
+
+
   <?php
   session_start();
   include('../../util/dbcon.php');
   include('../../util/time.php');
   $query  = mysqli_query($con, "SELECT * FROM courses");
-
+  ?>
+  <div class="course">     
+  <?php
   // $num_row = mysqli_num_rows($query);
   while ($row   = mysqli_fetch_array($query)) {
     $id = $row['crid'];
   ?>
-    <div class="card" style="width: 18rem">
-      <img src="<?php echo $row['crimg']; ?>" class="card-img-top" alt="courseImg">
-      <div class="card-body">
-        <h5 class="card-title"><?php echo $row['crnaam']; ?></h5>
+      <div class="contain">
+        <div class="cardes">
+          <img src="<?php echo $row['crimg']; ?>" alt="courseImg" />
+          <div class="cardes-body">
+            <div class="rowes">
+              <div class="cardes-title">
+                <h4><?php echo $row['crnaam']; ?></h4>
+                <h3>₹<?php echo $row['amt']; ?>/-</h3>
+              </div>
+            </div>
+            <hr />
+            <p> Duration: 
+              <?php
+              echo calcCourseDuration($row['dur']); ?> Days
+            </p>
+            <div class="btns-group">
+              <div class="btns">
+                <a <?php echo 'href=" ./checkout.php?id=' . $id . '"';  ?>>Enroll Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"> Price: ₹<?php echo $row['amt']; ?>/-</li>
-        <li class="list-group-item">Duration: <?php
-                                              echo calcCourseDuration($row['dur']); ?> Days</li>
-
-
-
-        <a class="btn btn-success" <?php echo 'href=" ./checkout.php?id=' . $id . '"';  ?>>Enroll</a>
-      </ul>
-    </div>
-  <?php
+      <?php
   }
   ?>
+  </div>
 
 
 

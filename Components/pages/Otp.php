@@ -22,8 +22,8 @@
             <button onclick="auth()">Verify</button>
         </div>
         <div class="footer">
-            <h5>New here? <a href="signup.html" target="_blank">Sign Up</a></h5>
-            <h5>Already have an account? <a href="login.html" target="_blank">Log In</a></h5>
+            <h5>New here? <a href="./signup.php">Sign Up</a></h5>
+            <h5>Already have an account? <a href="./login.php">Log In</a></h5>
         </div>
         <script>
             const otp = Math.trunc(Math.random() * (999999 - 111111) +

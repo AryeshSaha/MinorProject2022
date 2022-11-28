@@ -15,11 +15,16 @@ html {
 }
 #register-btn {
     text-decoration: none;
-    color: rgb(2, 39, 2);
+    color: black;
 }
 #login-btn {
     text-decoration: none;
-    color: blue;
+    color: black;
+}
+
+#admin-btn {
+    text-decoration: none;
+    color: black;
 }
 
 .banner--image img {
@@ -81,11 +86,17 @@ html {
 footer {
     bottom: 0;
     width: 100%;
-    height: 100px;
     background-color: #e3f2fd;
     display: flex;
     flex-direction: column;
 }
+
+.row{
+    margin-left: 170px !important;
+}
+
 .center {
+    padding-right: 15px;
     text-align: center;
+    font-weight: bold;
 }

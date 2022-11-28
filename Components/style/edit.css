@@ -40,10 +40,6 @@ h1 {
   display: none;
 }
 
-.btn{
-  
-}
-
 #uploadBtn {
   height: 40px;
   width: 100%;
@@ -61,34 +57,32 @@ h1 {
   display: none;
 }
 
-.container {
+.containered {
+  /* border: 2px solid black; */
   position: absolute;
   top: 68%;
-  left: 47.5%;
+  left: 49.5%;
   transform: translate(-50%, -50%);
   overflow: hidden;
   margin-top: 30px;
 }
 
-.container input {
+.containered input {
   margin-bottom: 10px;
   margin-left: 40%;
   margin-right: 40%;
   padding: 7px 17px;
 }
 
-.container button {
-  margin-top: 10px;
-  margin-left: 40%;
-  margin-right: 40%;
+.containered button {
   padding: 7px 17px;
-  background-color: aqua;
-  border: 2px solid aqua;
   border-radius: 5px;
   font-size: 15px;
   font-weight: bold;
   letter-spacing: 1.5px;
+  margin-top: 10px;
+  margin-left: 45%;
 }
-.container button:hover {
+.containered button:hover {
   background-color: aquamarine;
 }

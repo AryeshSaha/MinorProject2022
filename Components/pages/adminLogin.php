@@ -8,7 +8,7 @@
     <div class="container">
         <form id="signup" action="#" method="post">
             <div class="header">
-                <h3> User Sign In </h3>
+                <h3> Admin Login </h3>
             </div>
             <div class="sep"></div>
             <div class="inputs">

@@ -27,6 +27,7 @@
             <form class="d-flex" role="search">
                 <button class="btn btn-outline-success" type="submit"><a href="./Components/pages/signup.php" id="register-btn">Register</a></button>
                 <button class="btn btn-outline-primary" type="submit"><a href="./Components/pages/login.php" id="login-btn">Login</a></button>
+                <button class="btn btn-outline-danger ms-4 me-3" type="submit"><a href="./Components/pages/adminLogin.php" id="admin-btn">Admin Login</a></button>
             </form>
         </div>
     </nav>
@@ -97,30 +98,30 @@
                 <div class="col">
                     <h1>Address</h1>
                     <p>
-                        Flat GB, Chhayaneer Apartment
-                        26A, Gariahat Road (South), Dhakuria
-                        Kolkata - 700031
+                        1/1, Service Rd, DG Block(Newtown),<br>
+                        Action Area I, Newtown, Chakpachuria,<br>
+                        West Bengal, Kolkata- 700156
                     </p>
                 </div>
                 <div class="col">
                     <h1>Contact No.</h1>
                     <p>
-                        (033) 2414 8295 / 2966 1221
-                        Mrs. Kheya Sarkar (Course Co-ordinator)
-                        +91 98305 51903
+                        (033) 2324 2050 / 2966 1221 <br>
+                        Ms. Abanti Ghosh(Course Co-ordinator) <br>  
+                        +91 12345 67890
                     </p>
                 </div>
                 <div class="col">
                     <h1>e-mail</h1>
                     <p>
-                        kolkatahormonefoundation@gmail.com
+                        kolkatahormonefoundation@gmail.com <br>
                         idec.desk@gmail.com (for IDEC)
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="center">
-            &copy; Copyright team 4 | All Rights Reserved |
+            <div class="center">
+                &copy; Copyright TEAM 4 | All Rights Reserved |
+            </div>
         </div>
     </footer>
 

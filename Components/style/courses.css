@@ -61,3 +61,81 @@
         padding-left: 2rem;
     }
 }
+
+/* card */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.course{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.contain {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 5rem;
+}
+
+.cardes {
+  width: 300px;
+  height: 440px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+}
+.cardes > *:not(img) {
+  padding: 5px 10px;
+}
+
+.cardes img {
+  width: 100%;
+  height: 180px;
+}
+
+.cardes-body {
+  padding: 5px;
+}
+.rowes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.cardes-body p {
+  color: #3d3d3d;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.view-btns a {
+  padding: 5px 15px;
+  border: 1.5px solid #007bff;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.btns-group {
+  display: flex;
+}
+
+.btns-group .btns a {
+  padding: 5px 15px;
+  background-color: cadetblue;
+  color: #fff;
+  border-radius: 3px;
+  margin-left: -2px;
+}
+.btns-group a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #000;
+}
